@@ -16,7 +16,7 @@ public class DB4O {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        // Funciona asdfsdaf
+        // Funciona al 100%
     }
     
 }
