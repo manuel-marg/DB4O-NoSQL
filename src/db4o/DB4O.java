@@ -24,11 +24,21 @@ public class DB4O {
         
         File f = new File("usuarios.db4o");
         ObjectContainer db = Db4oEmbedded.openFile(f.getAbsolutePath());
+        
+        // SELECT * FROM Usuarios
         Usuario usuario = new Usuario();
         ObjectSet<Usuario> result = db.queryByExample(usuario);
         while(result.hasNext()){
             System.out.println(result.next().toString());
         }
+        
+        // SELECT * FROM Usuarios WHERE id = 3
+        usuario = new Usuario(3);
+        result = db.queryByExample(usuario);
+        while(result.hasNext()){
+            System.out.println(result.next().toString());
+        }  
+        
         db.close();
         
     }

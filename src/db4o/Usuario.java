@@ -157,6 +157,10 @@ public class Usuario {
         return "Usuario{" + "id=" + id + ", nombre=" + nombre + ", username=" + username + ", foto_perfil=" + foto_perfil + ", correo=" + correo + ", biografia=" + biografia + ", fecha_nacimiento=" + fecha_nacimiento + ", telefono=" + telefono + ", ultimo_ip=" + ultimo_ip + ", verificado=" + verificado + ", privado=" + privado + ", pendientes=" + pendientes + ", seguidores=" + seguidores + ", seguidos=" + seguidos + '}';
     }
 
+    public Usuario(int id) {
+        this.id = id;
+    }
+
        
     
 }
