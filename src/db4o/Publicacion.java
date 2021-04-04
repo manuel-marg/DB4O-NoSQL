@@ -13,15 +13,15 @@ public class Publicacion {
     private Hashtag[] hashtag;
     private String ubicacion;
     private int cantidad_likes;
-    private LocalDate fecha_publicacion;
-    private LocalDate fecha_modificacion;
+    private String fecha_publicacion;
+    private String fecha_modificacion;
     private Usuario[] user_etiquetado;
     private Boolean archivado;
 
     public Publicacion() {
     }
 
-    public Publicacion(int id, Usuario usuario, String foto, String video, String descripcion, Hashtag[] hashtag, String ubicacion, int cantidad_likes, LocalDate fecha_publicacion, LocalDate fecha_modificacion, Usuario[] user_etiquetado, Boolean archivado) {
+    public Publicacion(int id, Usuario usuario, String foto, String video, String descripcion, Hashtag[] hashtag, String ubicacion, int cantidad_likes, String fecha_publicacion, String fecha_modificacion, Usuario[] user_etiquetado, Boolean archivado) {
         this.id = id;
         this.usuario = usuario;
         this.foto = foto;
@@ -100,19 +100,19 @@ public class Publicacion {
         this.cantidad_likes = cantidad_likes;
     }
 
-    public LocalDate getFecha_publicacion() {
+    public String getFecha_publicacion() {
         return fecha_publicacion;
     }
 
-    public void setFecha_publicacion(LocalDate fecha_publicacion) {
+    public void setFecha_publicacion(String fecha_publicacion) {
         this.fecha_publicacion = fecha_publicacion;
     }
 
-    public LocalDate getFecha_modificacion() {
+    public String getFecha_modificacion() {
         return fecha_modificacion;
     }
 
-    public void setFecha_modificacion(LocalDate fecha_modificacion) {
+    public void setFecha_modificacion(String fecha_modificacion) {
         this.fecha_modificacion = fecha_modificacion;
     }
 
@@ -130,6 +130,15 @@ public class Publicacion {
 
     public void setArchivado(Boolean archivado) {
         this.archivado = archivado;
+    }
+
+    public Publicacion(int id) {
+        this.id = id;
+    }
+
+    @Override
+    public String toString() {
+        return "Publicacion{" + "id=" + id + ", usuario=" + usuario + ", foto=" + foto + ", video=" + video + ", descripcion=" + descripcion + ", hashtag=" + hashtag + ", ubicacion=" + ubicacion + ", cantidad_likes=" + cantidad_likes + ", fecha_publicacion=" + fecha_publicacion + ", fecha_modificacion=" + fecha_modificacion + ", user_etiquetado=" + user_etiquetado + ", archivado=" + archivado + '}';
     }
     
     
