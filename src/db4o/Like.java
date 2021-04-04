@@ -1,8 +1,6 @@
 
 package db4o;
 
-import java.time.LocalDate;
-
 public class Like {
    
     private int id;
