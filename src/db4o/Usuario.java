@@ -11,8 +11,8 @@ public class Usuario {
     private String foto_perfil;
     private String correo;
     private String biografia;
-    private LocalDate fecha_nacimiento;
-    private int telefono;
+    private String fecha_nacimiento;
+    private String telefono;
     private String ultimo_ip;
     private Boolean verificado;
     private Boolean privado;
@@ -23,7 +23,7 @@ public class Usuario {
     public Usuario() {
     }
 
-    public Usuario(int id, String nombre, String username, String foto_perfil, String correo, String biografia, LocalDate fecha_nacimiento, int telefono, String ultimo_ip, Boolean verificado, Boolean privado, Usuario[] pendientes, Usuario[] seguidores, Usuario[] seguidos) {
+    public Usuario(int id, String nombre, String username, String foto_perfil, String correo, String biografia, String fecha_nacimiento, String telefono, String ultimo_ip, Boolean verificado, Boolean privado, Usuario[] pendientes, Usuario[] seguidores, Usuario[] seguidos) {
         this.id = id;
         this.nombre = nombre;
         this.username = username;
@@ -88,19 +88,19 @@ public class Usuario {
         this.biografia = biografia;
     }
 
-    public LocalDate getFecha_nacimiento() {
+    public String getFecha_nacimiento() {
         return fecha_nacimiento;
     }
 
-    public void setFecha_nacimiento(LocalDate fecha_nacimiento) {
+    public void setFecha_nacimiento(String fecha_nacimiento) {
         this.fecha_nacimiento = fecha_nacimiento;
     }
 
-    public int getTelefono() {
+    public String getTelefono() {
         return telefono;
     }
 
-    public void setTelefono(int telefono) {
+    public void setTelefono(String telefono) {
         this.telefono = telefono;
     }
 
@@ -151,7 +151,12 @@ public class Usuario {
     public void setSeguidos(Usuario[] seguidos) {
         this.seguidos = seguidos;
     }
-    
-    
+
+    @Override
+    public String toString() {
+        return "Usuario{" + "id=" + id + ", nombre=" + nombre + ", username=" + username + ", foto_perfil=" + foto_perfil + ", correo=" + correo + ", biografia=" + biografia + ", fecha_nacimiento=" + fecha_nacimiento + ", telefono=" + telefono + ", ultimo_ip=" + ultimo_ip + ", verificado=" + verificado + ", privado=" + privado + ", pendientes=" + pendientes + ", seguidores=" + seguidores + ", seguidos=" + seguidos + '}';
+    }
+
+       
     
 }
