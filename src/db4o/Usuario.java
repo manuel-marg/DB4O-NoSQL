@@ -161,6 +161,10 @@ public class Usuario {
         this.id = id;
     }
 
+    public Usuario(String username) {
+        this.username = username;
+    }
+
        
     
 }

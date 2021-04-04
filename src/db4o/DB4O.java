@@ -39,6 +39,13 @@ public class DB4O {
             System.out.println(result.next().toString());
         }  
         
+        // SELECT * FROM Usuarios WHERE username = wthirlwallrq
+        usuario = new Usuario("wthirlwallrq");
+        result = db.queryByExample(usuario);
+        while(result.hasNext()){
+            System.out.println(result.next().toString());
+        }          
+        
         db.close();
         
     }
