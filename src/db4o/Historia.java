@@ -11,13 +11,13 @@ public class Historia {
     private String video;
     private Usuario usuario;
     private Boolean archivado;
-    private LocalDate fecha_publicacion;
+    private String fecha_publicacion;
     private Usuario[] usuario_etiquetado;
 
     public Historia() {
     }
 
-    public Historia(int id, Boolean closefriends, String foto, String video, Usuario usuario, Boolean archivado, LocalDate fecha_publicacion, Usuario[] usuario_etiquetado) {
+    public Historia(int id, Boolean closefriends, String foto, String video, Usuario usuario, Boolean archivado, String fecha_publicacion, Usuario[] usuario_etiquetado) {
         this.id = id;
         this.closefriends = closefriends;
         this.foto = foto;
@@ -76,11 +76,11 @@ public class Historia {
         this.archivado = archivado;
     }
 
-    public LocalDate getFecha_publicacion() {
+    public String getFecha_publicacion() {
         return fecha_publicacion;
     }
 
-    public void setFecha_publicacion(LocalDate fecha_publicacion) {
+    public void setFecha_publicacion(String fecha_publicacion) {
         this.fecha_publicacion = fecha_publicacion;
     }
 

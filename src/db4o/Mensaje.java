@@ -9,12 +9,12 @@ public class Mensaje {
     private Usuario usuario;
     private String mensaje;
     private Boolean leido;
-    private LocalDate fecha;
+    private String fecha;
 
     public Mensaje() {
     }
 
-    public Mensaje(int id, Usuario usuario, String mensaje, Boolean leido, LocalDate fecha) {
+    public Mensaje(int id, Usuario usuario, String mensaje, Boolean leido, String fecha) {
         this.id = id;
         this.usuario = usuario;
         this.mensaje = mensaje;
@@ -54,11 +54,11 @@ public class Mensaje {
         this.leido = leido;
     }
 
-    public LocalDate getFecha() {
+    public String getFecha() {
         return fecha;
     }
 
-    public void setFecha(LocalDate fecha) {
+    public void setFecha(String fecha) {
         this.fecha = fecha;
     }
     

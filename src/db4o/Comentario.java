@@ -9,21 +9,21 @@ public class Comentario {
     private Usuario usuario;
     private int id_publicacion;
     private String contenido;
-    private LocalDate fecha_publicacion;
-    private LocalDate fecha_modificacion;
+    private String fecha_publicacion;
+    private String fecha_modificacion;
     private int cantidad_likes;
 
     public Comentario() {
     }
 
-    public Comentario(int id, Usuario usuario, int id_publicacion, String contenido, LocalDate fecha_publicacion, LocalDate fecha_modificacion, int cantidad_likes) {
+    public Comentario(int id, Usuario usuario, int id_publicacion, String contenido, String fecha_publicacion) {
         this.id = id;
         this.usuario = usuario;
         this.id_publicacion = id_publicacion;
         this.contenido = contenido;
         this.fecha_publicacion = fecha_publicacion;
-        this.fecha_modificacion = fecha_modificacion;
-        this.cantidad_likes = cantidad_likes;
+        this.fecha_modificacion = "";
+        this.cantidad_likes = 0;
     }
 
     public int getId() {
@@ -58,21 +58,25 @@ public class Comentario {
         this.contenido = contenido;
     }
 
-    public LocalDate getFecha_publicacion() {
+    public String getFecha_publicacion() {
         return fecha_publicacion;
     }
 
-    public void setFecha_publicacion(LocalDate fecha_publicacion) {
+    public void setFecha_publicacion(String fecha_publicacion) {
         this.fecha_publicacion = fecha_publicacion;
     }
 
-    public LocalDate getFecha_modificacion() {
+    public String getFecha_modificacion() {
         return fecha_modificacion;
     }
 
-    public void setFecha_modificacion(LocalDate fecha_modificacion) {
+    public void setFecha_modificacion(String fecha_modificacion) {
         this.fecha_modificacion = fecha_modificacion;
     }
+
+  
+
+   
 
     public int getCantidad_likes() {
         return cantidad_likes;

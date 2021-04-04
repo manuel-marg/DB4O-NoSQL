@@ -10,20 +10,20 @@ public class Like {
     private Boolean tipo;
     private int id_publicacion; // Podriamos pasar el Objeto
     private int id_comentario; // Prodrimos paras el Objeto
-    private LocalDate fecha_publicacion;
-    private LocalDate fecha_modificacion;
+    private String fecha_publicacion;
+    private String fecha_modificacion;
 
     public Like() {
     }
 
-    public Like(int id, Usuario usuario, Boolean tipo, int id_publicacion, int id_comentario, LocalDate fecha_publicacion, LocalDate fecha_modificacion) {
+    public Like(int id, Usuario usuario, Boolean tipo, int id_publicacion, int id_comentario, String fecha_publicacion) {
         this.id = id;
         this.usuario = usuario;
         this.tipo = tipo;
         this.id_publicacion = id_publicacion;
         this.id_comentario = id_comentario;
         this.fecha_publicacion = fecha_publicacion;
-        this.fecha_modificacion = fecha_modificacion;
+        this.fecha_modificacion = "";
     }
 
     public int getId() {
@@ -66,19 +66,19 @@ public class Like {
         this.id_comentario = id_comentario;
     }
 
-    public LocalDate getFecha_publicacion() {
+    public String getFecha_publicacion() {
         return fecha_publicacion;
     }
 
-    public void setFecha_publicacion(LocalDate fecha_publicacion) {
+    public void setFecha_publicacion(String fecha_publicacion) {
         this.fecha_publicacion = fecha_publicacion;
     }
 
-    public LocalDate getFecha_modificacion() {
+    public String getFecha_modificacion() {
         return fecha_modificacion;
     }
 
-    public void setFecha_modificacion(LocalDate fecha_modificacion) {
+    public void setFecha_modificacion(String fecha_modificacion) {
         this.fecha_modificacion = fecha_modificacion;
     }
     
