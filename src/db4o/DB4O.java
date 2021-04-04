@@ -28,6 +28,7 @@ public class DB4O {
         // SELECT * FROM Usuarios
         Usuario usuario = new Usuario();
         ObjectSet<Usuario> result = db.queryByExample(usuario);
+        System.out.println("SELECT * FROM Usuarios");
         while(result.hasNext()){
             System.out.println(result.next().toString());
         }
@@ -35,6 +36,7 @@ public class DB4O {
         // SELECT * FROM Usuarios WHERE id = 3
         usuario = new Usuario(3);
         result = db.queryByExample(usuario);
+        System.out.println("SELECT * FROM Usuarios WHERE id = 3");
         while(result.hasNext()){
             System.out.println(result.next().toString());
         }  
@@ -42,6 +44,7 @@ public class DB4O {
         // SELECT * FROM Usuarios WHERE username = wthirlwallrq
         usuario = new Usuario("wthirlwallrq");
         result = db.queryByExample(usuario);
+        System.out.println("SELECT * FROM Usuarios WHERE username = wthirlwallrq");
         while(result.hasNext()){
             System.out.println(result.next().toString());
         }          
