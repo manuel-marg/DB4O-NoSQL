@@ -2,6 +2,7 @@
 package db4o;
 
 import java.time.LocalDate;
+import java.util.Arrays;
 
 public class Historia {
 
@@ -92,6 +93,13 @@ public class Historia {
         this.usuario_etiquetado = usuario_etiquetado;
     }
     
-    
+    public Historia(int id) {
+        this.id = id;
+    }
+
+    @Override
+    public String toString() {
+        return "Historia{" + "id=" + id + ", closefriends=" + closefriends + ", foto=" + foto + ", video=" + video + ", usuario=" + usuario + ", archivado=" + archivado + ", fecha_publicacion=" + fecha_publicacion + ", usuario_etiquetado=" + Arrays.toString(usuario_etiquetado) + '}';
+    }
     
 }
