@@ -50,6 +50,13 @@ public class Guardado {
         this.publicacion = publicacion;
     }
     
-    
+    public Guardado(String nombre_album) {
+        this.nombre_album = nombre_album;
+    }
+
+    @Override
+    public String toString() {
+        return "Guardado{" + "id=" + id + ", usuario=" + usuario + ", nombre_album=" + nombre_album + ", publicacion=" + publicacion + '}';
+    }        
     
 }
