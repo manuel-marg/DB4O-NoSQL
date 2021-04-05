@@ -14,7 +14,7 @@ public class DB4O {
 //        new DB4O().GenerarUsuarios();
 //        new DB4O().GenerarPublicaciones();
 //        new DB4O().generarLikes();
-        new DB4O().getArrayUsuarioAleatorio();
+//        new DB4O().getArrayUsuarioAleatorio();
         
         // CONSULTAS A USUARIOS
         File f = new File("usuarios.db4o");
@@ -71,6 +71,7 @@ public class DB4O {
         
     }
         
+    /*
     public Usuario getUsuarioAleatorio(){
         int id = (int) (Math.random()*1000);
         File f = new File("usuarios.db4o");
@@ -6138,5 +6139,7 @@ public class DB4O {
         db.close();
 
     }
+
+*/
 
 }
