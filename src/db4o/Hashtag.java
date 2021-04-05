@@ -30,6 +30,13 @@ public class Hashtag {
         this.hashtag = hashtag;
     }
     
-    
+    public Hashtag(int id) {
+        this.id = id;
+    }
+
+    @Override
+    public String toString() {
+        return "Hashtag{" + "id=" + id + ", hashtag=" + hashtag + '}';
+    }    
     
 }
