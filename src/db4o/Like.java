@@ -80,13 +80,6 @@ public class Like {
         this.fecha_modificacion = fecha_modificacion;
     }
     
-    public Like(int id_publicacion) {
-        this.id_publicacion = id_publicacion;
-    }
     
-    @Override
-    public String toString() {
-        return "Like{" + "id=" + id + ", usuario=" + usuario + ", tipo=" + tipo + ", id_publicacion=" + id_publicacion + ", id_comentario=" + id_comentario + ", fecha_publicacion=" + fecha_publicacion + ", fecha_modificacion=" + fecha_modificacion + '}';
-    }
     
 }

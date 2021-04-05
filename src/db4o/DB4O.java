@@ -12,14 +12,14 @@ public class DB4O {
     public static void main(String[] args) {
        
 //        new DB4O().GenerarUsuarios();
- //       new DB4O().GenerarPublicaciones();
-   //     new DB4O().generarLikes();
-     //   new DB4O().getArrayUsuarioAleatorio();
+//        new DB4O().GenerarPublicaciones();
+//        new DB4O().generarLikes();
+//        new DB4O().getArrayUsuarioAleatorio();
         
         // CONSULTAS A USUARIOS
         File f = new File("usuarios.db4o");
         ObjectContainer db = Db4oEmbedded.openFile(f.getAbsolutePath());
-        /*
+        
         // SELECT * FROM Usuarios
         Usuario usuario = new Usuario();
         ObjectSet<Usuario> result = db.queryByExample(usuario);
@@ -27,10 +27,10 @@ public class DB4O {
         while(result.hasNext()){
             System.out.println(result.next().toString());
         }
-        */
+        
         // SELECT * FROM Usuarios WHERE id = 3
-        Usuario usuario = new Usuario(3);
-        ObjectSet<Usuario> result = db.queryByExample(usuario);
+        usuario = new Usuario(3);
+        result = db.queryByExample(usuario);
         System.out.println("\n SELECT * FROM Usuarios WHERE id = 3");
         while(result.hasNext()){
             System.out.println(result.next().toString());
@@ -49,7 +49,7 @@ public class DB4O {
         //CONSULTAS A PUBLICACIONES
         f = new File("publicaciones.db4o");
         db = Db4oEmbedded.openFile(f.getAbsolutePath());
-        /*
+        
         // SELECT * FROM Publicaciones
         Publicacion publicacion = new Publicacion();
         ObjectSet<Publicacion> resultPublicacion = db.queryByExample(publicacion);
@@ -57,10 +57,10 @@ public class DB4O {
         while(resultPublicacion.hasNext()){
             System.out.println(resultPublicacion.next().toString());
         }
-        */
+        
         // SELECT * FROM Publicaciones WHERE id = 3
-        Publicacion publicacion = new Publicacion(998);
-        ObjectSet<Publicacion> resultPublicacion = db.queryByExample(publicacion);
+        publicacion = new Publicacion(998);
+        resultPublicacion = db.queryByExample(publicacion);
         System.out.println("\n SELECT * FROM Publicaciones WHERE id = 998");
         while(resultPublicacion.hasNext()){
             System.out.println(resultPublicacion.next().toString());
@@ -68,32 +68,10 @@ public class DB4O {
         
         db.close();
         
-        //CONSULTAS A LIKES
-        f = new File("likes.db4o");
-        db = Db4oEmbedded.openFile(f.getAbsolutePath());
-        /*
-        // SELECT * FROM Publicaciones
-        Publicacion publicacion = new Publicacion();
-        ObjectSet<Publicacion> resultPublicacion = db.queryByExample(publicacion);
-        System.out.println("\n SELECT * FROM Publicaciones");
-        while(resultPublicacion.hasNext()){
-            System.out.println(resultPublicacion.next().toString());
-        }
-        */
-        // SELECT * FROM Publicaciones WHERE id = 3
-        Like like = new Like(120);
-        ObjectSet<Like> resultLike = db.queryByExample(like);
-        System.out.println("\n SELECT * FROM Likes WHERE id_publicacion=120");
-        while(resultLike.hasNext()){
-            System.out.println(resultLike.next().toString());
-        }           
-        
-        db.close(); 
-        
         
     }
         
-   /* 
+    /*
     public Usuario getUsuarioAleatorio(){
         int id = (int) (Math.random()*1000);
         File f = new File("usuarios.db4o");
