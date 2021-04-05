@@ -11,10 +11,10 @@ public class DB4O {
 
     public static void main(String[] args) {
        
-        new DB4O().GenerarUsuarios();
-        new DB4O().GenerarPublicaciones();
-        new DB4O().generarLikes();
-        
+//        new DB4O().GenerarUsuarios();
+//        new DB4O().GenerarPublicaciones();
+//        new DB4O().generarLikes();
+        new DB4O().getArrayUsuarioAleatorio();
         
         // CONSULTAS A USUARIOS
         File f = new File("usuarios.db4o");
@@ -83,6 +83,30 @@ public class DB4O {
         }
         db.close();
         return usuario;
+    }
+    
+    public Usuario[] getArrayUsuarioAleatorio(){
+        
+        int num = (int) (Math.random()*10);
+        System.out.println("Numero " + num);
+        Usuario[] etiquetados = new Usuario[num];
+        for (int i = 0; i < num; i++) {
+            
+            int id = (int) (Math.random()*1000);
+            File f = new File("usuarios.db4o");
+            ObjectContainer db = Db4oEmbedded.openFile(f.getAbsolutePath());
+            // SELECT * FROM Usuarios WHERE id = ALEATORIO
+            Usuario usuario = new Usuario(id);
+            ObjectSet<Usuario> result = db.queryByExample(usuario);
+            while(result.hasNext()){
+                usuario = result.next();
+            }
+            db.close();
+            etiquetados[i] = usuario;
+        }
+        for (int i = 0; i < etiquetados.length; i++) {
+        }
+        return etiquetados;
     }
     
     public void GenerarUsuarios(){
