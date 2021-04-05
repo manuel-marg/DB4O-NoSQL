@@ -16,14 +16,14 @@ public class Comentario {
     public Comentario() {
     }
 
-    public Comentario(int id, Usuario usuario, int id_publicacion, String contenido, String fecha_publicacion) {
+    public Comentario(int id, Usuario usuario, int id_publicacion, String contenido, String fecha_publicacion, String fecha_modificacion, int cantidad_likes) {
         this.id = id;
         this.usuario = usuario;
         this.id_publicacion = id_publicacion;
         this.contenido = contenido;
         this.fecha_publicacion = fecha_publicacion;
-        this.fecha_modificacion = "";
-        this.cantidad_likes = 0;
+        this.fecha_modificacion = fecha_modificacion;
+        this.cantidad_likes = cantidad_likes;
     }
 
     public int getId() {
@@ -73,6 +73,8 @@ public class Comentario {
     public void setFecha_modificacion(String fecha_modificacion) {
         this.fecha_modificacion = fecha_modificacion;
     }
+    
+    
 
   
 
@@ -86,6 +88,13 @@ public class Comentario {
         this.cantidad_likes = cantidad_likes;
     }
     
-    
+    public Comentario(int id_publicacion) {
+        this.id_publicacion = id_publicacion;
+    }
+
+    @Override
+    public String toString() {
+        return "Comentario{" + "id=" + id + ", usuario=" + usuario + ", id_publicacion=" + id_publicacion + ", contenido=" + contenido + ", fecha_publicacion=" + fecha_publicacion + ", fecha_modificacion=" + fecha_modificacion + ", cantidad_likes=" + cantidad_likes + '}';
+    }   
     
 }
