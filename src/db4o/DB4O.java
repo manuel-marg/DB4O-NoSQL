@@ -10,67 +10,70 @@ public class DB4O {
 
 
     public static void main(String[] args) {
-       
-        new DB4O().GenerarUsuarios();
-        new DB4O().GenerarPublicaciones();
-        new DB4O().generarLikes();
         
+        new DB4O().SelectUsuarios();
         
-        // CONSULTAS A USUARIOS
-        File f = new File("usuarios.db4o");
-        ObjectContainer db = Db4oEmbedded.openFile(f.getAbsolutePath());
+        //new DB4O().SelectPublicaciones();
         
-        // SELECT * FROM Usuarios
-        Usuario usuario = new Usuario();
-        ObjectSet<Usuario> result = db.queryByExample(usuario);
-        System.out.println("\n SELECT * FROM Usuarios");
-        while(result.hasNext()){
-            System.out.println(result.next().toString());
-        }
-        
-        // SELECT * FROM Usuarios WHERE id = 3
-        usuario = new Usuario(3);
-        result = db.queryByExample(usuario);
-        System.out.println("\n SELECT * FROM Usuarios WHERE id = 3");
-        while(result.hasNext()){
-            System.out.println(result.next().toString());
-        }  
-        
-        // SELECT * FROM Usuarios WHERE username = wthirlwallrq
-        usuario = new Usuario("wthirlwallrq");
-        result = db.queryByExample(usuario);
-        System.out.println("\n SELECT * FROM Usuarios WHERE username = wthirlwallrq");
-        while(result.hasNext()){
-            System.out.println(result.next().toString());
-        }          
-        
-        db.close();
-        
+    }
+    
+    public void SelectPublicaciones() {
         //CONSULTAS A PUBLICACIONES
-        f = new File("publicaciones.db4o");
-        db = Db4oEmbedded.openFile(f.getAbsolutePath());
-        
+        File f = new File("publicaciones.db4o");
+        ObjectContainer db = Db4oEmbedded.openFile(f.getAbsolutePath());
+
         // SELECT * FROM Publicaciones
         Publicacion publicacion = new Publicacion();
         ObjectSet<Publicacion> resultPublicacion = db.queryByExample(publicacion);
         System.out.println("\n SELECT * FROM Publicaciones");
-        while(resultPublicacion.hasNext()){
+        while (resultPublicacion.hasNext()) {
             System.out.println(resultPublicacion.next().toString());
         }
-        
+
         // SELECT * FROM Publicaciones WHERE id = 3
         publicacion = new Publicacion(998);
         resultPublicacion = db.queryByExample(publicacion);
         System.out.println("\n SELECT * FROM Publicaciones WHERE id = 998");
-        while(resultPublicacion.hasNext()){
+        while (resultPublicacion.hasNext()) {
             System.out.println(resultPublicacion.next().toString());
-        }           
-        
+        }
+
         db.close();
-        
-        
     }
-        
+
+    public void SelectUsuarios() {
+        // CONSULTAS A USUARIOS
+        File f = new File("usuarios.db4o");
+        ObjectContainer db = Db4oEmbedded.openFile(f.getAbsolutePath());
+
+        // SELECT * FROM Usuarios
+        Usuario usuario = new Usuario();
+        ObjectSet<Usuario> result = db.queryByExample(usuario);
+        System.out.println("\n SELECT * FROM Usuarios");
+        while (result.hasNext()) {
+            System.out.println(result.next().toString());
+        }
+
+        // SELECT * FROM Usuarios WHERE id = 3
+        usuario = new Usuario(3);
+        result = db.queryByExample(usuario);
+        System.out.println("\n SELECT * FROM Usuarios WHERE id = 3");
+        while (result.hasNext()) {
+            System.out.println(result.next().toString());
+        }
+
+        // SELECT * FROM Usuarios WHERE username = wthirlwallrq
+        usuario = new Usuario("wthirlwallrq");
+        result = db.queryByExample(usuario);
+        System.out.println("\n SELECT * FROM Usuarios WHERE username = wthirlwallrq");
+        while (result.hasNext()) {
+            System.out.println(result.next().toString());
+        }
+
+        db.close();
+    }
+    
+   /* 
     public Usuario getUsuarioAleatorio(){
         int id = (int) (Math.random()*1000);
         File f = new File("usuarios.db4o");
@@ -6115,4 +6118,6 @@ public class DB4O {
 
     }
 
+    */
+    
 }
