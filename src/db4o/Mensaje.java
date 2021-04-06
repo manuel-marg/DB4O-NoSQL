@@ -62,6 +62,13 @@ public class Mensaje {
         this.fecha = fecha;
     }
     
+    public Mensaje(int id) {
+        this.id = id;
+    }
     
+    @Override
+    public String toString() {
+        return "Mensaje{" + "id=" + id + ", usuario=" + usuario + ", mensaje=" + mensaje + ", leido=" + leido + ", fecha=" + fecha + '}';
+    }         
     
 }
