@@ -78,7 +78,7 @@ public class DB4O {
         // SELECT * FROM Usuarios WHERE id = 1
         Usuario usuario = new Usuario(1);
         ObjectSet<Usuario> result = db.queryByExample(usuario);
-        System.out.println("\n SELECT * FROM Usuarios WHERE id = 1");
+        System.out.println("\n Consulta Usuario con id = 1");
         while(result.hasNext()){
             System.out.println(result.next().toString());
         }  
@@ -86,7 +86,7 @@ public class DB4O {
         // SELECT * FROM Usuarios WHERE username = wthirlwallrq
         usuario = new Usuario("wthirlwallrq");
         result = db.queryByExample(usuario);
-        System.out.println("\n SELECT * FROM Usuarios WHERE username = wthirlwallrq");
+        System.out.println("\n Consulta Usuario con username = wthirlwallrq");
         while(result.hasNext()){
             System.out.println(result.next().toString());
         }          
@@ -100,7 +100,7 @@ public class DB4O {
         // SELECT * FROM Publicaciones WHERE id = 1
         Publicacion publicacion = new Publicacion(1);
         ObjectSet<Publicacion> resultPublicacion = db.queryByExample(publicacion);
-        System.out.println("\n SELECT * FROM Publicaciones WHERE id = 1");
+        System.out.println("\n Consulta Publicacion con id = 1");
         while(resultPublicacion.hasNext()){
             System.out.println(resultPublicacion.next().toString());
         }           
@@ -114,7 +114,7 @@ public class DB4O {
         // SELECT * FROM Likes WHERE id_publicacion = 200
         Like like = new Like(200);
         ObjectSet<Like> resultLike = db.queryByExample(like);
-        System.out.println("\n SELECT * FROM Likes WHERE id_publicacion = 200");
+        System.out.println("\n Consulta Likes de id_publicacion = 200");
         while(resultLike.hasNext()){
             System.out.println(resultLike.next().toString());
         }           
@@ -128,7 +128,7 @@ public class DB4O {
         // SELECT * FROM Historias WHERE id = 200
         Historia historia = new Historia(200);
         ObjectSet<Historia> resultHistoria = db.queryByExample(historia);
-        System.out.println("\n SELECT * FROM Likes WHERE id = 200");
+        System.out.println("\n Consulta Historia con id = 200");
         while(resultHistoria.hasNext()){
             System.out.println(resultHistoria.next().toString());
         }           
@@ -142,7 +142,7 @@ public class DB4O {
         // SELECT * FROM Likes WHERE id_publicacion = 580
         Comentario comentario = new Comentario(580);
         ObjectSet<Comentario> resultComentario = db.queryByExample(comentario);
-        System.out.println("\n SELECT * FROM Comentarios WHERE id_publicacion = 580");
+        System.out.println("\n Consulta Comentarios de id_publicacion = 580");
         while(resultComentario.hasNext()){
             System.out.println(resultComentario.next().toString());
         }           
@@ -153,10 +153,10 @@ public class DB4O {
         f = new File("hashtags.db4o");
         db = Db4oEmbedded.openFile(f.getAbsolutePath());
 
-        // SELECT * FROM Likes WHERE id = 145
+        // SELECT * FROM Hashtags WHERE id = 145
         Hashtag hashtag = new Hashtag(145);
         ObjectSet<Hashtag> resultHashtag = db.queryByExample(hashtag);
-        System.out.println("\n SELECT * FROM Comentarios WHERE id = 145");
+        System.out.println("\n Consulta Hashtag con id = 145");
         while(resultHashtag.hasNext()){
             System.out.println(resultHashtag.next().toString());
         }           
@@ -170,7 +170,7 @@ public class DB4O {
         // SELECT * FROM Guardados WHERE nombre_album = eu
         Guardado guardado = new Guardado("eu");
         ObjectSet<Guardado> resultGuardado = db.queryByExample(guardado);
-        System.out.println("\n SELECT * FROM Guardados WHERE nombre_album = eu");
+        System.out.println("\n Consulta Guardados con nombre_album = eu");
         while(resultGuardado.hasNext()){
             System.out.println(resultGuardado.next().toString());
         }                    
@@ -184,7 +184,7 @@ public class DB4O {
         // SELECT * FROM Chats WHERE id = 46
         Chat chat = new Chat(46);
         ObjectSet<Chat> resultChat = db.queryByExample(chat);
-        System.out.println("\n SELECT * FROM Chats WHERE id = 46");
+        System.out.println("\n Consulta Chat con id = 46");
         while(resultChat.hasNext()){
             System.out.println(resultChat.next().toString());
         }                    
