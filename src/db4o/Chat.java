@@ -1,6 +1,8 @@
 
 package db4o;
 
+import java.util.Arrays;
+
 public class Chat {
     
     private int id;
@@ -50,7 +52,14 @@ public class Chat {
         this.mensajes = mensajes;
     }
 
-
+    public Chat(int id) {
+        this.id = id;
+    }
+    
+    @Override
+    public String toString() {
+        return "Chat{" + "id=" + id + ", emisor=" + emisor + ", receptor=" + receptor + ", mensajes=" + Arrays.toString(mensajes) + '}';
+    }    
     
     
 }
