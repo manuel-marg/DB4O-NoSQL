@@ -23,7 +23,7 @@ public class DB4O {
 //        new DB4O().GenerarChats();
 
         new DB4O().Consultas();
-//        new DB4O().ModificarUsuario(1, "david1234");
+//        new DB4O().ModificarUsuario(1, "new_username");
 //        new DB4O().EliminarUsuario("mlawler8");
 //        new DB4O().EliminarPublicacion(1);
         
@@ -94,7 +94,7 @@ public class DB4O {
         File f = new File("usuarios.db4o");
         ObjectContainer db = Db4oEmbedded.openFile(f.getAbsolutePath());
         
-        // SELECT * FROM Usuarios WHERE id = 1
+        // Consulta Usuario con id = 1
         Usuario usuario = new Usuario(1);
         ObjectSet<Usuario> result = db.queryByExample(usuario);
         System.out.println("\n Consulta Usuario con id = 1");
@@ -102,7 +102,7 @@ public class DB4O {
             System.out.println(result.next().toString());
         }  
         
-        // SELECT * FROM Usuarios WHERE username = wthirlwallrq
+        // Consulta Usuario con username = wthirlwallrq
         usuario = new Usuario("wthirlwallrq");
         result = db.queryByExample(usuario);
         System.out.println("\n Consulta Usuario con username = wthirlwallrq");
@@ -116,7 +116,7 @@ public class DB4O {
         f = new File("publicaciones.db4o");
         db = Db4oEmbedded.openFile(f.getAbsolutePath());
 
-        // SELECT * FROM Publicaciones WHERE id = 1
+        // Consulta Publicacion con id = 1
         Publicacion publicacion = new Publicacion(1);
         ObjectSet<Publicacion> resultPublicacion = db.queryByExample(publicacion);
         System.out.println("\n Consulta Publicacion con id = 1");
@@ -130,7 +130,7 @@ public class DB4O {
         f = new File("likes.db4o");
         db = Db4oEmbedded.openFile(f.getAbsolutePath());
 
-        // SELECT * FROM Likes WHERE id_publicacion = 200
+        // Consulta Likes de id_publicacion = 200
         Like like = new Like(200);
         ObjectSet<Like> resultLike = db.queryByExample(like);
         System.out.println("\n Consulta Likes de id_publicacion = 200");
@@ -144,7 +144,7 @@ public class DB4O {
         f = new File("historias.db4o");
         db = Db4oEmbedded.openFile(f.getAbsolutePath());
 
-        // SELECT * FROM Historias WHERE id = 200
+        // Consulta Historia con id = 200
         Historia historia = new Historia(200);
         ObjectSet<Historia> resultHistoria = db.queryByExample(historia);
         System.out.println("\n Consulta Historia con id = 200");
@@ -158,7 +158,7 @@ public class DB4O {
         f = new File("comentarios.db4o");
         db = Db4oEmbedded.openFile(f.getAbsolutePath());
 
-        // SELECT * FROM Likes WHERE id_publicacion = 580
+        // Consulta Comentarios de id_publicacion = 580
         Comentario comentario = new Comentario(580);
         ObjectSet<Comentario> resultComentario = db.queryByExample(comentario);
         System.out.println("\n Consulta Comentarios de id_publicacion = 580");
@@ -172,7 +172,7 @@ public class DB4O {
         f = new File("hashtags.db4o");
         db = Db4oEmbedded.openFile(f.getAbsolutePath());
 
-        // SELECT * FROM Hashtags WHERE id = 145
+        // Consulta Hashtag con id = 145
         Hashtag hashtag = new Hashtag(145);
         ObjectSet<Hashtag> resultHashtag = db.queryByExample(hashtag);
         System.out.println("\n Consulta Hashtag con id = 145");
@@ -186,7 +186,7 @@ public class DB4O {
         f = new File("guardados.db4o");
         db = Db4oEmbedded.openFile(f.getAbsolutePath());
 
-        // SELECT * FROM Guardados WHERE nombre_album = eu
+        // Consulta Guardados con nombre_album = eu
         Guardado guardado = new Guardado("eu");
         ObjectSet<Guardado> resultGuardado = db.queryByExample(guardado);
         System.out.println("\n Consulta Guardados con nombre_album = eu");
@@ -200,7 +200,7 @@ public class DB4O {
         f = new File("chats.db4o");
         db = Db4oEmbedded.openFile(f.getAbsolutePath());
 
-        // SELECT * FROM Chats WHERE id = 46
+        // Consulta Chat con id = 46
         Chat chat = new Chat(46);
         ObjectSet<Chat> resultChat = db.queryByExample(chat);
         System.out.println("\n Consulta Chat con id = 46");
