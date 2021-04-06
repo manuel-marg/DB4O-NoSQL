@@ -21,29 +21,43 @@ public class DB4O {
 //        new DB4O().GenerarGuardados();
 //        new DB4O().GenerarMensajes();
 //        new DB4O().GenerarChats();
+
+        new DB4O().Consultas();
+//        new DB4O().ModificarUsuario(1, "david1234");
+//        new DB4O().EliminarUsuario("mlawler8");
+//        new DB4O().EliminarPublicacion(1);
         
-        /*
-        //ELIMINAR PUBLICACION
-        File f = new File("publicaciones.db4o");
-        ObjectContainer db = Db4oEmbedded.openFile(f.getAbsolutePath());
+
+    
         
-        Publicacion publicacion = new Publicacion(507);
-        ObjectSet<Publicacion> resultPublicacion = db.queryByExample(publicacion);
-        if (resultPublicacion.hasNext()) {
-            Publicacion publicacionDel = resultPublicacion.next();
-            db.delete(publicacionDel);
+    }
+    
+    public void ModificarUsuario(int id_usuario, String new_username) {
+        
+        //MODIFICAR USUARIO
+        File foo = new File("usuarios.db4o");
+        ObjectContainer dboo = Db4oEmbedded.openFile(foo.getAbsolutePath());
+        
+        Usuario usuario = new Usuario(id_usuario);
+        ObjectSet<Usuario> resultUsuario = dboo.queryByExample(usuario);
+        if (resultUsuario.hasNext()) {
+            Usuario usuarioMod = resultUsuario.next();
+            usuarioMod.setUsername(new_username);
+            dboo.store(usuarioMod);
         } else {
             System.out.println("No existe el objeto");
         }
+        dboo.close();
         
-        db.close();
-        */
-        /*
+    }
+    
+    public void EliminarUsuario(String username) {
+        
         //ELIMINAR USUARIO
         File f = new File("usuarios.db4o");
         ObjectContainer db = Db4oEmbedded.openFile(f.getAbsolutePath());
         
-        Usuario usuario = new Usuario("kfranklin0");
+        Usuario usuario = new Usuario(username);
         ObjectSet<Usuario> resultUsuario = db.queryByExample(usuario);
         if (resultUsuario.hasNext()) {
             Usuario usuarioDel = resultUsuario.next();
@@ -52,25 +66,30 @@ public class DB4O {
             System.out.println("No existe el objeto");
         }
         
-        db.close();
-        */
-        /*
-        //MODIFICAR USUARIO
-        File foo = new File("usuarios.db4o");
-        ObjectContainer dboo = Db4oEmbedded.openFile(foo.getAbsolutePath());
+        db.close();        
         
-        Usuario usuario = new Usuario(1);
-        ObjectSet<Usuario> resultUsuario = dboo.queryByExample(usuario);
-        if (resultUsuario.hasNext()) {
-            Usuario usuarioMod = resultUsuario.next();
-            usuarioMod.setUsername("javier2043");
-            dboo.store(usuarioMod);
+    }
+    
+    public void EliminarPublicacion(int id) {
+     
+        //ELIMINAR PUBLICACION
+        File f = new File("publicaciones.db4o");
+        ObjectContainer db = Db4oEmbedded.openFile(f.getAbsolutePath());
+        
+        Publicacion publicacion = new Publicacion(id);
+        ObjectSet<Publicacion> resultPublicacion = db.queryByExample(publicacion);
+        if (resultPublicacion.hasNext()) {
+            Publicacion publicacionDel = resultPublicacion.next();
+            db.delete(publicacionDel);
         } else {
             System.out.println("No existe el objeto");
         }
-        dboo.close();
-        */
         
+        db.close(); 
+        
+    }
+    
+    public void Consultas() {
         // CONSULTAS A USUARIOS
         File f = new File("usuarios.db4o");
         ObjectContainer db = Db4oEmbedded.openFile(f.getAbsolutePath());
@@ -190,7 +209,7 @@ public class DB4O {
         }                    
         
         db.close();
-    }
+    }    
     
     /*
     public Publicacion getPublicacionAleatoria(){
