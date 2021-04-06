@@ -22,15 +22,63 @@ public class DB4O {
 //        new DB4O().GenerarMensajes();
 //        new DB4O().GenerarChats();
         
+        /*
+        //ELIMINAR PUBLICACION
+        File f = new File("publicaciones.db4o");
+        ObjectContainer db = Db4oEmbedded.openFile(f.getAbsolutePath());
+        
+        Publicacion publicacion = new Publicacion(507);
+        ObjectSet<Publicacion> resultPublicacion = db.queryByExample(publicacion);
+        if (resultPublicacion.hasNext()) {
+            Publicacion publicacionDel = resultPublicacion.next();
+            db.delete(publicacionDel);
+        } else {
+            System.out.println("No existe el objeto");
+        }
+        
+        db.close();
+        */
+        /*
+        //ELIMINAR USUARIO
+        File f = new File("usuarios.db4o");
+        ObjectContainer db = Db4oEmbedded.openFile(f.getAbsolutePath());
+        
+        Usuario usuario = new Usuario("kfranklin0");
+        ObjectSet<Usuario> resultUsuario = db.queryByExample(usuario);
+        if (resultUsuario.hasNext()) {
+            Usuario usuarioDel = resultUsuario.next();
+            db.delete(usuarioDel);
+        } else {
+            System.out.println("No existe el objeto");
+        }
+        
+        db.close();
+        */
+        /*
+        //MODIFICAR USUARIO
+        File foo = new File("usuarios.db4o");
+        ObjectContainer dboo = Db4oEmbedded.openFile(foo.getAbsolutePath());
+        
+        Usuario usuario = new Usuario(1);
+        ObjectSet<Usuario> resultUsuario = dboo.queryByExample(usuario);
+        if (resultUsuario.hasNext()) {
+            Usuario usuarioMod = resultUsuario.next();
+            usuarioMod.setUsername("javier2043");
+            dboo.store(usuarioMod);
+        } else {
+            System.out.println("No existe el objeto");
+        }
+        dboo.close();
+        */
         
         // CONSULTAS A USUARIOS
         File f = new File("usuarios.db4o");
         ObjectContainer db = Db4oEmbedded.openFile(f.getAbsolutePath());
         
-        // SELECT * FROM Usuarios WHERE id = 3
-        Usuario usuario = new Usuario(3);
+        // SELECT * FROM Usuarios WHERE id = 1
+        Usuario usuario = new Usuario(1);
         ObjectSet<Usuario> result = db.queryByExample(usuario);
-        System.out.println("\n SELECT * FROM Usuarios WHERE id = 3");
+        System.out.println("\n SELECT * FROM Usuarios WHERE id = 1");
         while(result.hasNext()){
             System.out.println(result.next().toString());
         }  
@@ -49,10 +97,10 @@ public class DB4O {
         f = new File("publicaciones.db4o");
         db = Db4oEmbedded.openFile(f.getAbsolutePath());
 
-        // SELECT * FROM Publicaciones WHERE id = 507
-        Publicacion publicacion = new Publicacion(507);
+        // SELECT * FROM Publicaciones WHERE id = 1
+        Publicacion publicacion = new Publicacion(1);
         ObjectSet<Publicacion> resultPublicacion = db.queryByExample(publicacion);
-        System.out.println("\n SELECT * FROM Publicaciones WHERE id = 507");
+        System.out.println("\n SELECT * FROM Publicaciones WHERE id = 1");
         while(resultPublicacion.hasNext()){
             System.out.println(resultPublicacion.next().toString());
         }           
