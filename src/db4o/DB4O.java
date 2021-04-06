@@ -122,7 +122,7 @@ public class DB4O {
         // SELECT * FROM Guardados WHERE nombre_album = eu
         Guardado guardado = new Guardado("eu");
         ObjectSet<Guardado> resultGuardado = db.queryByExample(guardado);
-        System.out.println("\n SELECT * FROM Guardados");
+        System.out.println("\n SELECT * FROM Guardados WHERE nombre_album = eu");
         while(resultGuardado.hasNext()){
             System.out.println(resultGuardado.next().toString());
         }                    
